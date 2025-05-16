@@ -1,0 +1,88 @@
+{
+  "steps": [
+    {
+      "durationms": 86,
+      "triggers": [
+        { "deviceindex": 2, "channel": 1, "note": 36, "velocity": 100 },
+        { "deviceindex": 2, "channel": 3, "note": 42, "velocity": 80 }
+      ]
+    },
+    {
+      "durationms": 86,
+      "triggers": []
+    },
+    {
+      "durationms": 86,
+      "triggers": [
+        { "deviceindex": 2, "channel": 3, "note": 42, "velocity": 80 }
+      ]
+    },
+    {
+      "durationms": 86,
+      "triggers": []
+    },
+    {
+      "durationms": 86,
+      "triggers": [
+        { "deviceindex": 2, "channel": 2, "note": 38, "velocity": 110 },
+        { "deviceindex": 2, "channel": 3, "note": 42, "velocity": 80 }
+      ]
+    },
+    {
+      "durationms": 86,
+      "triggers": []
+    },
+    {
+      "durationms": 86,
+      "triggers": [
+        { "deviceindex": 2, "channel": 4, "note": 46, "velocity": 90 }
+      ]
+    },
+    {
+      "durationms": 86,
+      "triggers": []
+    },
+    {
+      "durationms": 86,
+      "triggers": [
+        { "deviceindex": 2, "channel": 1, "note": 36, "velocity": 100 },
+        { "deviceindex": 2, "channel": 3, "note": 42, "velocity": 80 }
+      ]
+    },
+    {
+      "durationms": 86,
+      "triggers": []
+    },
+    {
+      "durationms": 86,
+      "triggers": [
+        { "deviceindex": 2, "channel": 3, "note": 42, "velocity": 80 }
+      ]
+    },
+    {
+      "durationms": 86,
+      "triggers": []
+    },
+    {
+      "durationms": 86,
+      "triggers": [
+        { "deviceindex": 2, "channel": 2, "note": 38, "velocity": 110 },
+        { "deviceindex": 2, "channel": 3, "note": 42, "velocity": 80 }
+      ]
+    },
+    {
+      "durationms": 86,
+      "triggers": []
+    },
+    {
+      "durationms": 86,
+      "triggers": [
+        { "deviceindex": 2, "channel": 4, "note": 46, "velocity": 90 }
+      ]
+    },
+    {
+      "durationms": 86,
+      "triggers": []
+    }
+  ]
+}
