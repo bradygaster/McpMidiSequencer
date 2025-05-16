@@ -1,6 +1,5 @@
 ﻿using McpServer.Models;
 using NAudio.Midi;
-using System.Threading;
 
 namespace McpServer.Services;
 internal class MidiController

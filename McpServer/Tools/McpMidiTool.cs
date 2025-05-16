@@ -29,7 +29,14 @@ public class McpMidiTool
     [McpServerTool]
     [Description("Stops playback of the currently-playing sequence.")]
     public void Stop() => MidiController.StopPlayback(); // Stop playback of the MIDI sequence
-    
+
+    [McpServerTool]
+    [Description("Gets the list of available MIDI devices.")]
+    public List<MidiDevice> GetMidiDevices()
+    {
+        return MidiController.ListMidiDevices();
+    }
+
     [McpServerTool]
     [Description("Returns the JSON Schema for the Sequence object, to help users understand how to structure their song data.")]
     public string GetSequenceSchema()
