@@ -10,25 +10,6 @@ namespace McpServer.Tools;
 [McpServerToolType]
 public class McpMidiTool
 {
-    [McpServerTool]
-    [Description("Plays a sequence based on a JSON format. Using this tool results in the entire sequence being played repeatedly or looped until the Stop tool is called.")]
-    public void Start(string sequenceJson)
-    {   
-        var sequence = JsonSerializer.Deserialize<Sequence>(sequenceJson);
-        if (sequence == null)
-        {
-            throw new ArgumentException("Invalid sequence JSON");
-        }
-
-        #pragma warning disable CS4014
-        // Start playing the sequence asynchronously
-        MidiController.PlaySequence(sequence);
-        #pragma warning restore CS4014 
-    }
-
-    [McpServerTool]
-    [Description("Stops playback of the currently-playing sequence.")]
-    public void Stop() => MidiController.StopPlayback(); // Stop playback of the MIDI sequence
 
     [McpServerTool]
     [Description("Gets the list of available MIDI devices.")]
@@ -43,11 +24,11 @@ public class McpMidiTool
     {
         // Generate JSON schema for the Sequence class
         var schema = JsonSchema.FromType<Sequence>();
-        
+
         // Add title and description to make it more user-friendly
         schema.Title = "MIDI Sequence Schema";
         schema.Description = "Schema for creating MIDI sequences to be played by the MIDI controller.";
-        
+
         // Provide a simple example in the description to help users get started
         var exampleJson = @"{
           ""steps"": [
@@ -67,8 +48,28 @@ public class McpMidiTool
 
         // Add the example to the schema description
         schema.Description += $"\n\nExample sequence:\n{exampleJson}";
-        
+
         // Convert the schema to a JSON string with indentation
         return schema.ToJson();
     }
+
+    [McpServerTool]
+    [Description("Plays a sequence based on a JSON format. Using this tool results in the entire sequence being played repeatedly or looped until the Stop tool is called.")]
+    public void Start(string sequenceJson)
+    {   
+        var sequence = JsonSerializer.Deserialize<Sequence>(sequenceJson);
+        if (sequence == null)
+        {
+            throw new ArgumentException("Invalid sequence JSON");
+        }
+
+        #pragma warning disable CS4014
+        // Start playing the sequence asynchronously
+        MidiController.PlaySequence(sequence);
+        #pragma warning restore CS4014 
+    }
+
+    [McpServerTool]
+    [Description("Stops playback of the currently-playing sequence.")]
+    public void Stop() => MidiController.StopPlayback();
 }
